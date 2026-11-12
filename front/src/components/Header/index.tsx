@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import fetch from 'isomorphic-fetch'
 
 import 'styles/header.scss'
 
 import StaycationLogo from './StaycationLogo'
 
 const Header = () => {
-  const [user, setUser] = useState(undefined)
+
+  /**
+   * TODO: just to build, to change 
+   */
+  const [user, setUser] = useState<any>(undefined)
 
   useEffect(() => {
     fetch('http://localhost:9000/users/1')
