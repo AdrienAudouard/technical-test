@@ -1,5 +1,6 @@
 import express from 'express'
 import cors from 'cors'
+import hotelsRouter from './routes/hotel';
 
 import { getUser } from './services/userService'
 
@@ -15,6 +16,8 @@ app.get('/users/:id', async (req, res) => {
   const user = await getUser(req.params.id)
   res.send(user)
 })
+
+app.use('/hotels', hotelsRouter)
 
 app.listen(9000, function () {
   console.log('Example app listening on port 9000!')
