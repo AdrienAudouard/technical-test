@@ -1,8 +1,7 @@
-@use '../../../styles/colors';
-
 .hotel-list-item {
   display: flex;
   flex-direction: column;
+  gap: 4px;
 
   &__picture {
     border-radius: 4px;
@@ -13,9 +12,16 @@
     aspect-ratio: 2 / 1;
   }
 
-  &__name {
-    font-size: 16px;
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  &__hotel-name {
     font-weight: 700;
+    font-size: 16px;
   }
 
   &__preview {
