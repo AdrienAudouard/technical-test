@@ -1,14 +1,14 @@
 import React from 'react'
-import { HotelReviews } from 'types/hotel'
+import { HotelSummaryReviews } from 'types/hotel'
 import './Reviews.scss'
 
 interface Props {
-  reviews: HotelReviews
+  reviews: HotelSummaryReviews
 }
 export const Reviews = ({ reviews }: Props) => {
-  const shouldDisplayRating = reviews.count > 0 && reviews.score !== null
+  const shouldDisplayReviews = reviews.count > 0 && reviews.score !== null
 
-  if (!shouldDisplayRating) {
+  if (!shouldDisplayReviews) {
     return null
   }
 

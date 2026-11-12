@@ -1,13 +1,20 @@
-export interface Hotel {
+export interface HotelSummary {
   id: number
   name: string
   stars: number
   preview: string
   pictureId: string
-  reviews: HotelReviews
+  reviews: HotelSummaryReviews
+  availability: HotelSummaryAvailability | null
 }
 
-export interface HotelReviews {
+export interface HotelSummaryReviews {
   count: number
   score: number | null
+}
+
+export interface HotelSummaryAvailability {
+  price: number
+  discountPrice: number
+  discountPercent: number
 }

@@ -1,11 +1,12 @@
 import React from 'react'
-import { Hotel } from 'types/hotel'
+import { HotelSummary } from 'types/hotel'
 import './HotelListItem.scss'
 import { Stars } from './Stars/Stars'
 import { Reviews } from './Reviews/Reviews'
+import { Availability } from './Availability/Availability'
 
 interface Props {
-  hotel: Hotel
+  hotel: HotelSummary
 }
 
 export const HotelListItem = ({ hotel }: Props) => {
@@ -24,6 +25,9 @@ export const HotelListItem = ({ hotel }: Props) => {
         <Reviews reviews={hotel.reviews}></Reviews>
       </p>
       <p className='hotel-list-item__preview'>{hotel.preview}</p>
+      {hotel.availability && (
+        <Availability availability={hotel.availability!}></Availability>
+      )}
     </li>
   )
 }

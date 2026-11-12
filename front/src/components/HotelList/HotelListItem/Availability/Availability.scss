@@ -1,0 +1,26 @@
+@use '../../../../styles/colors';
+
+.availability {
+  display: flex;
+  gap: 4px;
+  align-items: baseline;
+
+  &__discount-price {
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  &__price {
+    font-size: 16px;
+    color: colors.$text-light;
+  }
+
+  &__discount-percent {
+    font-weight: 700;
+    font-size: 16px;
+    color: colors.$gray-border;
+    background-color: colors.$primary;
+    padding: 4px;
+    border-radius: 4px;
+  }
+}

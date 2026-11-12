@@ -1,4 +1,4 @@
-import { Hotel } from 'types/hotel'
+import { HotelSummary } from 'types/hotel'
 import { fetcher } from './client'
 
-export const fetchHotels = () => fetcher<Hotel[]>('/hotels')
+export const fetchHotels = () => fetcher<HotelSummary[]>('/hotels')
