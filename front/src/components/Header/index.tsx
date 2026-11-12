@@ -1,29 +1,18 @@
-import React, { useEffect, useState } from 'react'
-
 import 'styles/header.scss'
 
 import StaycationLogo from './StaycationLogo'
+import { useUser } from './hooks/useUser'
+import React from 'react'
+import { DEFAULT_USER_ID } from './constants'
 
 const Header = () => {
-  /**
-   * TODO: just to build, to change
-   */
-  const [user, setUser] = useState<any>(undefined)
-
-  useEffect(() => {
-    fetch('http://localhost:9000/users/1')
-      .then(async res => {
-        const result = await res.json()
-        setUser(result)
-      })
-      .catch(e => console.warn('Error: ', e))
-  }, [])
+  const { data: user } = useUser(DEFAULT_USER_ID)
 
   return (
-    <div className='header'>
+    <header className='header'>
       <StaycationLogo />
       {user && <div className='header__user'>Welcome, {user.firstName}!</div>}
-    </div>
+    </header>
   )
 }
 
