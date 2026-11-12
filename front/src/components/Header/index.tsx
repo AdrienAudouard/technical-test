@@ -5,9 +5,8 @@ import 'styles/header.scss'
 import StaycationLogo from './StaycationLogo'
 
 const Header = () => {
-
   /**
-   * TODO: just to build, to change 
+   * TODO: just to build, to change
    */
   const [user, setUser] = useState<any>(undefined)
 
@@ -23,11 +22,7 @@ const Header = () => {
   return (
     <div className='header'>
       <StaycationLogo />
-      {user && (
-        <div className='header__user'>
-                    Welcome, {user.firstName}!
-        </div>
-      )}
+      {user && <div className='header__user'>Welcome, {user.firstName}!</div>}
     </div>
   )
 }
