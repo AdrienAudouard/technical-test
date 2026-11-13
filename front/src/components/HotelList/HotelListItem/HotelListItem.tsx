@@ -26,7 +26,7 @@ export const HotelListItem = ({ hotel }: Props) => {
       </p>
       <p className='hotel-list-item__preview'>{hotel.preview}</p>
       {hotel.availability && (
-        <Availability availability={hotel.availability!}></Availability>
+        <Availability availability={hotel.availability}></Availability>
       )}
     </li>
   )

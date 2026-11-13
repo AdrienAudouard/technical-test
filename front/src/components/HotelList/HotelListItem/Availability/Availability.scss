@@ -5,6 +5,14 @@
   gap: 4px;
   align-items: baseline;
 
+  &--past {
+    color: colors.$text-light;
+
+    .availability__discount-percent {
+      background-color: colors.$text-light;
+    }
+  }
+
   &__discount-price {
     font-weight: 700;
     font-size: 16px;

@@ -16,5 +16,6 @@ export interface HotelSummaryReviews {
 export interface HotelSummaryAvailability {
   price: number
   discountPrice: number
-  discountPercent: number
+  discountRate: number
+  isLastSale: boolean
 }

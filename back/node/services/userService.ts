@@ -1,8 +1,20 @@
-import camelCase from 'camelcase-keys'
+import { findUser, UserRow } from '../repositories/userRepository'
+import { HttpError } from '../types/http-error';
+import { User } from '../types/user';
 
-import DB from '../db'
+const toUser = (userRow: UserRow): User => {
+  return {
+    firstName: userRow.first_name,
+    id: userRow.id,
+  };
+}
 
-export const getUser = async (userId) => {
-  const res = await DB.query('SELECT * FROM users WHERE id=$1::int', [userId])
-  return camelCase(res.rows[0])
+export const getUser = async (userId: number): Promise<User> => {
+  const user = await findUser(userId);
+
+  if (!user) {
+    throw new HttpError(404, `User with id ${userId} not found`)
+  }
+
+  return toUser(user)
 }

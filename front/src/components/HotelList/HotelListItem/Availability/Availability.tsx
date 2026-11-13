@@ -10,10 +10,12 @@ interface Props {
 export const Availability = ({ availability }: Props) => {
   const formattedDiscountPrice = formatAmount(availability.discountPrice)
   const formattedPrice = formatAmount(availability.price)
-  const formattedDiscountPercent = formatPercent(availability.discountPercent)
+  const formattedDiscountPercent = formatPercent(availability.discountRate)
 
   return (
-    <p className='availability'>
+    <p
+      className={`availability ${availability.isLastSale ? '' : 'availability--past'}`}
+    >
       <span className='availability__discount-price'>
         {formattedDiscountPrice}
       </span>

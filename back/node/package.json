@@ -10,11 +10,13 @@
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.6",
     "@types/pg": "^8.23.1",
+    "prettier": "^3.10.1",
     "standard": "^14.3.1",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   },
   "scripts": {
-    "start": "tsx watch app.ts"
+    "start": "tsx watch app.ts",
+    "format": "prettier --write \"**/*.{ts,tsx,scss}\""
   }
 }

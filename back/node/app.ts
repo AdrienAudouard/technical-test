@@ -1,23 +1,16 @@
 import express from 'express'
 import cors from 'cors'
-import hotelsRouter from './routes/hotel';
-
-import { getUser } from './services/userService'
+import hotelsRouter from './routes/hotel'
+import usersRouter from './routes/user'
+import { errorMiddleware } from './middlewares/errorMiddleware'
 
 const app = express()
 
 app.use(cors())
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-})
-
-app.get('/users/:id', async (req, res) => {
-  const user = await getUser(req.params.id)
-  res.send(user)
-})
-
 app.use('/hotels', hotelsRouter)
+app.use('/users', usersRouter)
+app.use(errorMiddleware)
 
 app.listen(9000, function () {
   console.log('Example app listening on port 9000!')
