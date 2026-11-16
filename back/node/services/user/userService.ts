@@ -1,16 +1,16 @@
-import { findUser, UserRow } from '../repositories/userRepository'
-import { HttpError } from '../types/http-error';
-import { User } from '../types/user';
+import { findUser, UserRow } from '../../repositories/users/usersRepository'
+import { HttpError } from '../../types/httpError'
+import { User } from '../../types/user'
 
 const toUser = (userRow: UserRow): User => {
   return {
     firstName: userRow.first_name,
-    id: userRow.id,
-  };
+    id: userRow.id
+  }
 }
 
 export const getUser = async (userId: number): Promise<User> => {
-  const user = await findUser(userId);
+  const user = await findUser(userId)
 
   if (!user) {
     throw new HttpError(404, `User with id ${userId} not found`)

@@ -4,13 +4,13 @@ export interface HotelSummary {
   stars: number
   preview: string
   pictureId: string
-  reviews: HotelSummaryReviews
+  reviews: HotelSummaryReviews | null
   availability: HotelSummaryAvailability | null
 }
 
 export interface HotelSummaryReviews {
   count: number
-  score: number | null
+  score: number
 }
 
 export interface HotelSummaryAvailability {

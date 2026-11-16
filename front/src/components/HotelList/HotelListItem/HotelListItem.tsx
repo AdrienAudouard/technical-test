@@ -22,7 +22,7 @@ export const HotelListItem = ({ hotel }: Props) => {
         <span className='hotel-list-item__hotel-name'>
           {hotel.name}&nbsp;<Stars count={hotel.stars}></Stars>
         </span>
-        <Reviews reviews={hotel.reviews}></Reviews>
+        {hotel.reviews && <Reviews reviews={hotel.reviews}></Reviews>}
       </p>
       <p className='hotel-list-item__preview'>{hotel.preview}</p>
       {hotel.availability && (

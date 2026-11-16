@@ -1,22 +1,27 @@
 {
   "dependencies": {
-    "camelcase-keys": "^6.1.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "pg": "8"
   },
   "devDependencies": {
+    "@swc/core": "^1.16.22",
+    "@swc/jest": "^0.2.39",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
     "@types/node": "^26.6.6",
     "@types/pg": "^8.23.1",
+    "@types/supertest": "^7.2.1",
+    "jest": "^30.5.2",
     "prettier": "^3.10.1",
-    "standard": "^14.3.1",
+    "supertest": "^7.3.2",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   },
   "scripts": {
     "start": "tsx watch app.ts",
+    "test": "jest",
     "format": "prettier --write \"**/*.{ts,tsx,scss}\""
   }
 }

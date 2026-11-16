@@ -1,8 +1,8 @@
 import express from 'express'
 import cors from 'cors'
-import hotelsRouter from './routes/hotel'
-import usersRouter from './routes/user'
 import { errorMiddleware } from './middlewares/errorMiddleware'
+import { hotelsRouter } from './routes/hotel/hotelsRouter'
+import { usersRouter } from './routes/user/userRouter'
 
 const app = express()
 

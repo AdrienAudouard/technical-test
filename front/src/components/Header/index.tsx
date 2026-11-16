@@ -1,12 +1,12 @@
 import 'styles/header.scss'
 
-import StaycationLogo from './StaycationLogo'
 import { useUser } from './hooks/useUser'
 import React from 'react'
-import { DEFAULT_USER_ID } from './constants'
+import { PLACEHOLDER_USER_ID } from './constants'
+import { StaycationLogo } from './StaycationLogo'
 
-const Header = () => {
-  const { data: user } = useUser(DEFAULT_USER_ID)
+export const Header = () => {
+  const { data: user } = useUser(PLACEHOLDER_USER_ID)
 
   return (
     <header className='header'>
@@ -15,5 +15,3 @@ const Header = () => {
     </header>
   )
 }
-
-export default Header
