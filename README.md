@@ -3,15 +3,15 @@
 ## Submission
 The backend is implemented using nodejs, both front end and back end run on Node 22
 
-### What has been done ?
+### What has been done?
 
-- **Node 22** Both apps were not working on recent node versions, so I've updated the dependencies to make the project working on Node 22
-- **Typescript** To benefit from type checking I've set up Typescript on both apps
-- **React Query** A personal preference, to simplify data fetching and handle loading, error and caching states
-- **Test** I've setup `Jest` and `Supertest` on the backend and `Jest` and `React Testing Library` on the frontend
-- **Formatting** I've replaced `Standard` by `Prettier` as it's not compatible with `Typescript`
+- **Node 22**: Both apps were not working on recent node versions, so I updated the dependencies so the project works on Node 22
+- **Typescript**: To benefit from type checking I setup Typescript on both apps
+- **React Query**: A personal preference, to simplify data fetching and handle loading and error states
+- **Test**: I've setup `Jest` and `Supertest` on the backend and `Jest` and `React Testing Library` on the frontend
+- **Formatting**: I've replaced `Standard` with `Prettier` as it's not compatible with `Typescript`
 
-### How to run the apps ?
+### How to run the apps?
 
 ```bash
 docker-compose up -V
@@ -38,8 +38,8 @@ Solutions:
 - **Hotel reviews (average score and number of reviews)**: On the `hotels` table I would create 2 new columns: `reviews_count`, `reviews_score_sum`. They would be maintained with a postgresql trigger 
 on `INSERT`, `UPDATE` and `DELETE`  operations on the `reviews` table.
 - **Price and availability**: I would cache, per hotel, the `id` of the best available opening on a Redis (or in the memory of the back-end if we only have one instance). The cache would be invalidated when a booking, opening or sale change. Each entry of the cache would have a ttl of 60 seconds in case a invalidation event is lost.
------
 
+-----
 
 Welcome! This technical test aims to validate a few basic programming skills before we go further.
 
